@@ -20,6 +20,12 @@ h1 {
   font-size: 2em; /* フォントサイズを大きく */
 }
 
+@media screen and (max-width: 500px) {
+  h1 {
+    font-size: 20px;
+  }
+}
+
 #input-text {
   width: 100%;
   max-width: 250px; /* 最大幅を設定 */
