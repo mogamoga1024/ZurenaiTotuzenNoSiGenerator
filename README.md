@@ -1,4 +1,7 @@
 # ZurenaiTotuzenNoSiGenerator
-ずれない突然の死ジェネレーター
+
+＿人人人人人人人人人人人人人人人人＿
+＞　ずれない突然のジェネレーター　＜
+￣ＹＹＹＹＹＹＹＹＹＹＹＹＹＹＹＹ￣
 
 https://mogamoga1024.github.io/ZurenaiTotuzenNoSiGenerator/
