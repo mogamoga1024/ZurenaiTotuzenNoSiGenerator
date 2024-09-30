@@ -61,7 +61,7 @@ function calcHankakuCount(text) {
 function createFukidasiCenter(text, hankakuCount, hankakuCountMax) {
     let result = "＞　";
 
-    let dif = hankakuCountMax - hankakuCount;
+    const dif = hankakuCountMax - hankakuCount;
     const space = " ".repeat(dif / 2);
     result += space + text + space;
     
