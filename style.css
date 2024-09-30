@@ -55,7 +55,7 @@ h1 {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   min-height: 50px; /* 結果表示用の最低高さを設定 */
   margin-bottom: 20px;
-  font-family: monospace;
+  font-family: monospace; /* モノスペースフォント */
 }
 
 #copy-btn {
