@@ -3,4 +3,8 @@
   h1 {
     font-size: 20px;
   }
+
+  #input-text {
+    max-width: calc(100% - 60px);
+  }
 }
