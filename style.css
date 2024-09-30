@@ -28,7 +28,7 @@ h1 {
 
 #input-text {
   width: 100%;
-  max-width: 250px; /* 最大幅を設定 */
+  max-width: 400px; /* 最大幅を設定 */
   height: 50px;
   padding: 10px;
   border: 1px solid var(--primary-color);
