@@ -12,12 +12,11 @@ $inputText.on("blur", function() {
 
     const inputText = $(this).val();
     if (inputText === "") {
-        $result.html("");
+        $result.hide();
         $copyButton.hide();
         return;
     }
-    $copyButton.show();
-
+    
     let hankakuCountMax = 0;
     const textList = inputText.split("\n").map(text => {
         const hankakuCount = calcHankakuCount(text);
@@ -34,6 +33,9 @@ $inputText.on("blur", function() {
     result += `￣Ｙ${"Ｙ".repeat(Math.floor((hankakuCountMax + 1) / 2))}Ｙ￣`;
 
     $result.html(result.replace(/\n/g, "<br>").replace(/ /g, "&nbsp;"));
+
+    $result.show();
+    $copyButton.show();
 });
 
 $copyButton.on("click", function() {

@@ -1,32 +1,77 @@
-
 :root {
-  font-family: monospace;
-  font-size: 16px;
-  background-color: #f4f4f4;
+  --background-color: #f4f4f4;
+  --primary-color: #007BFF;
+  --secondary-color: #0056b3;
+  --text-color: #333;
+  --border-radius: 8px;
+  --font-family: 'Arial', sans-serif;
 }
 
-button {
+body {
+  font-family: var(--font-family);
   font-size: 16px;
+  background-color: var(--background-color);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 中央寄せ */
 }
 
 h1 {
-  margin: 0 auto;
-  width: fit-content;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  font-size: 2em; /* フォントサイズを大きく */
 }
 
 #input-text {
-  display: block;
-  margin: 0 auto;
+  width: 100%;
+  max-width: 600px; /* 最大幅を設定 */
+  height: 150px;
+  padding: 10px;
+  border: 1px solid var(--primary-color);
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: monospace; /* モノスペースフォント */
+  font-size: 16px;
+  margin-bottom: 20px;
+  transition: border-color 0.3s; /* ボーダーの色が変わる際のトランジション */
+}
+
+#input-text:focus {
+  border-color: var(--secondary-color); /* フォーカス時のボーダー色 */
+  outline: none; /* デフォルトのアウトラインを非表示 */
 }
 
 #result {
   margin: 0 auto;
   width: fit-content;
+  padding: 15px;
+  background: white;
+  border: 1px solid var(--primary-color);
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  min-height: 50px; /* 結果表示用の最低高さを設定 */
+  margin-bottom: 20px;
 }
 
 #copy-btn {
   display: block;
   margin: 0 auto;
   width: 120px;
+  padding: 10px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s; /* ホバー時のトランジション */
 }
 
+#copy-btn:hover {
+  background-color: var(--secondary-color); /* ホバー時の色 */
+}
+
+#copy-btn:focus {
+  outline: none; /* デフォルトのアウトラインを非表示 */
+}
