@@ -8,4 +8,7 @@ input, textarea, button {
   font-size: 18px;
 }
 
+#copy-btn {
+  display: none;
+}
 

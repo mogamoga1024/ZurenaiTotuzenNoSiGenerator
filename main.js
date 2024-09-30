@@ -3,6 +3,7 @@
 
 const $inputText = $("#input-text");
 const $result = $("#result");
+const $copyButton = $("#copy-btn");
 
 let result = "";
 
@@ -11,8 +12,12 @@ $inputText.on("blur", function() {
 
     const inputText = $(this).val();
     if (inputText === "") {
+        $result.html("");
+        $copyButton.hide();
         return;
     }
+    $copyButton.show();
+
     let hankakuCountMax = 0;
     const textList = inputText.split("\n").map(text => {
         const hankakuCount = calcHankakuCount(text);
@@ -26,9 +31,17 @@ $inputText.on("blur", function() {
     for (const {text, hankakuCount} of textList) {
         result += createFukidasiCenter(text, hankakuCount, hankakuCountMax);
     }
-    result += `￣Ｙ${"Ｙ".repeat(Math.floor((hankakuCountMax + 1) / 2))}Ｙ￣\n`;
+    result += `￣Ｙ${"Ｙ".repeat(Math.floor((hankakuCountMax + 1) / 2))}Ｙ￣`;
 
     $result.html(result.replace(/\n/g, "<br>").replace(/ /g, "&nbsp;"));
+});
+
+$copyButton.on("click", function() {
+    navigator.clipboard.writeText(result);
+    $copyButton.text("コピー完了");
+    setTimeout(() => {
+        $copyButton.text("コピー");
+    }, 1000);
 });
 
 // ロジック
