@@ -19,7 +19,11 @@ $inputText.on("blur", function() {
     
     let hankakuCountMax = 0;
     const textList = inputText.split("\n").map(text => {
-        const hankakuCount = calcHankakuCount(text);
+        let hankakuCount = calcHankakuCount(text);
+        if (hankakuCount % 2 === 1) {
+            text = " " + text;
+            hankakuCount += 1;
+        }
         if (hankakuCountMax < hankakuCount) {
             hankakuCountMax = hankakuCount;
         }
@@ -58,10 +62,6 @@ function createFukidasiCenter(text, hankakuCount, hankakuCountMax) {
     let result = "＞　";
 
     let dif = hankakuCountMax - hankakuCount;
-    if (dif % 2 === 1) {
-        result += " ";
-        dif -= 1;
-    }
     const space = " ".repeat(dif / 2);
     result += space + text + space;
     
