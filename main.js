@@ -36,7 +36,7 @@ $inputText.on("blur", function() {
     }
     result += `￣Ｙ${"Ｙ".repeat(Math.floor((hankakuCountMax + 1) / 2))}Ｙ￣`;
 
-    $result.html(result.replace(/\n/g, "<br>").replace(/ /g, "&nbsp;"));
+    $result.html(result.replace(/\n/g, "<br>"));
 
     $result.show();
     $copyButton.show();
@@ -63,7 +63,7 @@ function createFukidasiCenter(text, hankakuCount, hankakuCountMax) {
 
     const dif = hankakuCountMax - hankakuCount;
     const space = " ".repeat(dif / 2);
-    result += space + text + space;
+    result += (space + text + space).replace(/ {2}/g, "　");
     
     result += "　＜\n";
     return result;
